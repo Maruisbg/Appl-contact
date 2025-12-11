@@ -11,16 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div class="haut">
-        <section class="image1">
-        <button class="button1"><img src="./../img/img1.jpg" alt="" width="30px"></button><h2>Nouveau Contact</h2>
-        </section>
-        <button class="button2">← Retour à la liste</button>
-    </div>
+
+<form action="">
+       <div class="haut">
+          <section class="image1">
+            <button class="button1"><img src="./../img/img1.jpg" alt="" width="30px"></button>
+            <h2>Nouveau Contact</h2>
+          </section>
+            <button class="button2">← Retour à la liste</button>
+       </div>
 
     <div class="corps">
-        <!-- <form action=""> -->
             <div class="corps1">
             <label for="">Nom*</label>
             <input type="text" placeholder="Entrez le nom" class="nova">
@@ -64,15 +65,19 @@
                     </div>
             </section>
             <section class="cotre"><button class="button7">Créer le contact</button><button class="button8">Annuler</button></section>
-        </form>
 
 
     </div>
+</form>
+
     <script>
+// ==================== Pour contact ============================
+
         let numero_contneur = document.querySelector('#numero_contneur');
         let ajout_numero = document.querySelector('#ajout_numero');
 
-        ajout_numero.addEventListener('click', function(){
+        ajout_numero.addEventListener('click', function(e){
+            e.preventDefault();
             let new_div = document.createElement('div');
 
             new_div.innerHTML = `
@@ -83,10 +88,13 @@
             numero_contneur.appendChild(new_div);
         });
 
+// ======================== Pour l'adresse ===================
+
         let adresse_conteneur = document.querySelector('#adresse_conteneur');
         let ajout_adresse = document.querySelector('#ajout_adresse');
 
-        ajout_adresse.addEventListener('click', function(){
+        ajout_adresse.addEventListener('click', function(e){
+            e.preventDefault();
             let new_div = document.createElement('div');
 
             new_div.innerHTML = `
